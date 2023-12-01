@@ -3,7 +3,7 @@ $insert = false;
 if(isset($_POST['name'])){
     $server = "localhost";
     $username = "root";
-    $password = "(Jaijawan@123)";
+    $password = "";
     $db="cars";
 
   
