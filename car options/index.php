@@ -40,8 +40,8 @@ if(isset($_POST['name'])){
     else
     $Sadan =0;
 
-    $sql = "INSERT INTO `user` (`name`, `email`, `phone`, `address`, `Hatchback`, `SUV`, `Sadan`) VALUES ('$name', '$email', '$phone', '$address', '$Hatchback', '$SUV', '$Sadan';";
-    echo $sql;
+    $sql = "INSERT INTO `user` (`name`, `email`, `phone`, `address`, `Hatchback`, `SUV`, `Sadan`) VALUES ('$name', '$email', '$phone', '$address', '$Hatchback', '$SUV', '$Sadan')";
+    // echo $sql;
 
     // Execute the query
     if(mysqli_query($con,$sql)){
@@ -65,12 +65,14 @@ if(isset($_POST['name'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>car options</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div>
+        <h2>Create your cardekho profile</h2>
     <form action="index.php" method="post">
 
-            <div>
+            <div class="ele">
                 <label for="name">name</label>
             <input type="text" name="name" id="" required>
             </div>
@@ -93,24 +95,28 @@ if(isset($_POST['name'])){
             <h2>Choose your right cars</h2>
 
             <div>
-                <div>
+                <div class="cars">
                     <input type="checkbox" style="width: 10em;height: 10em;" name="Hatchback">
-            <img src="images/images/front-left-side-47 (6)" alt="">
+            <img src="images/front-left-side-47 (6).webp" alt="Hatchback">
+            Hatchback
+            
                 </div>
 
-                <div>
+                <div class="cars">
                     <input type="checkbox" style="width: 10em;height: 10em;" name="SUV">
-            <img src="front-left-side-47.webp" alt="">
+            <img src="images/front-left-side-47.webp" alt="SUV">
+            SUV
                 </div>
 
-                <div>
+                <div class="cars">
                     <input type="checkbox" style="width: 10em;height: 10em;" name="Sadan">
-            <img src="images/front-left-side-47 (7)" alt="">
+            <img src="images/front-left-side-47 (7).webp" alt="Sadan">
+            Sadan
                 </div>
 
             </div>
             <div>
-                <button type="submit" id="submit-btn"> Submit</button>
+                <button type="submit" id="submit-btn" > Submit</button>
             </div>
 
         </form>
