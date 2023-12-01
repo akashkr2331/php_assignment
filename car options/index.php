@@ -1,25 +1,20 @@
 <?php
 $insert = false;
 if(isset($_POST['name'])){
-    // Set connection variables
     $server = "localhost";
     $username = "root";
     $password = "(Jaijawan@123)";
     $db="cars";
 
-    // Create a database connection
+  
     $con = mysqli_connect($server, $username, $password, $db);
 
-    // Check for connection success
+  
     if(!$con){
         die("connection to this database failed due to" . mysqli_connect_error());
     }
-//     if($_POST['Sadan']=="on")
-//     echo $_POST['Sadan'];
-// else 
-// echo "off";
 
-    // Collect post variables
+ 
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
@@ -41,20 +36,18 @@ if(isset($_POST['name'])){
     $Sadan =0;
 
     $sql = "INSERT INTO `user` (`name`, `email`, `phone`, `address`, `Hatchback`, `SUV`, `Sadan`) VALUES ('$name', '$email', '$phone', '$address', '$Hatchback', '$SUV', '$Sadan')";
-    // echo $sql;
-
-    // Execute the query
+    
     if(mysqli_query($con,$sql)){
         echo "Successfully inserted";
 
-        // Flag for successful insertion
+  
         $insert = true;
     }
     else{
         echo "ERROR: $sql <br> $con->error";
     }
 
-    // Close the database connection
+
     $con->close();
 }
 ?>
