@@ -1,5 +1,5 @@
 <?php
-// require_once "connection.php";
+
 include_once 'database.php';
 if(isset($_POST['name'])) {
     mysqli_query($conn,"UPDATE user set  name='" . $_POST['name'] . "', phone='" . $_POST['phone'] . "' ,email='" . $_POST['email'] . "', 
